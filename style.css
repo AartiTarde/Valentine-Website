@@ -1,0 +1,161 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ================= LAYOUT ================= */
+.split-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ================= LEFT CONTENT ================= */
+.content-side {
+    width: 40%;
+    min-width: 320px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ================= RIGHT IMAGE ================= */
+.image-side {
+    width: 60%;
+    background-image: url("bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ================= CARD ================= */
+.container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= TITLE ================= */
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 25px;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+/* ================= BUTTON ZONE ================= */
+.buttons {
+    position: relative;
+    height: 110px;
+    margin-top: 15px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 14px 28px;
+    font-size: clamp(14px, 2.5vw, 18px);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+/* YES */
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+/* NO */
+#noBtn {
+    background: #adb5bd;
+    color: white;
+    position: absolute;
+    left: 55%;
+}
+
+/* ================= RESULT ================= */
+#result {
+    margin-top: 25px;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* ================= TABLETS ================= */
+@media (max-width: 1024px) {
+    .content-side {
+        width: 45%;
+    }
+
+    .image-side {
+        width: 55%;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .content-side,
+    .image-side {
+        width: 100%;
+        height: 50vh;
+        min-width: unset;
+    }
+
+    .buttons {
+        height: 120px;
+    }
+
+    #noBtn {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 420px) {
+    .container {
+        padding: 25px;
+    }
+
+    .buttons {
+        height: 140px;
+    }
+}
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+    }
+}
